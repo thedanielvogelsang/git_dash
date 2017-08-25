@@ -20,7 +20,10 @@ class GitHubService
   end
 
   def starred_repos
-    parse connection.get("/user/starred?access_token=#{current_user.token}")
+    repos = parse connection.get("/user/starred?access_token=#{current_user.token}")
+    repos.map do |repo|
+      Repo.new(repo)
+    end
   end
 
   def followers

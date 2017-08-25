@@ -17,7 +17,7 @@
     <section class="container-dash-content">
       <h3> MY STARRED REPOS -- <%= @api.starred_repos.count %></h3>
       <ul><% @api.starred_repos.each do |repo| %>
-        <li><%= link_to repo[:name], repo[:html_url] %></li>
+        <li><%= link_to repo.name, repo.url %></li>
       <% end %></ul>
     </section>
     <section class="container-dash-content">
