@@ -1,0 +1,35 @@
+.avatar-thumbnail {
+  height: 20px;
+  width: 20px;
+  border: 1px solid black;
+}
+
+.profile-pic{
+  align-self: center;
+  height: 100px;
+  width: 100px;
+}
+
+.profile-header {
+  text-align: center;
+}
+
+.container {
+  height: auto;
+  width: 100%;
+  padding:30px;
+}
+
+.container-dash{
+  width: 100%;
+  height: auto
+}
+
+.container-dash-content{
+  background-color: rgb(188, 238, 254);
+  float: left;
+  margin: 10px;
+  border: 2px solid black;
+  padding: 3px;
+  height: 500px;
+}

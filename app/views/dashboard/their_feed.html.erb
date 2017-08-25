@@ -1,0 +1,10 @@
+<h1>THEIR FEED!</h1>
+
+<table><% @recents.each do |commit| %>
+  <tr>
+    <th>type</th><th>user_name</th><th>commit_location</th><th>repo_url</th><th>commit_id</th>
+  </tr>
+  <tr>
+    <td><%= commit[:type] %></td><td><%= commit[:actor][:login] %></td><td><%= commit[:repo][:name] %></td><td><%= link_to commit[:repo][:name], commit[:repo][:url] %></td><td><%= commit[:id] %></td>
+  </tr>
+<% end %></table>
