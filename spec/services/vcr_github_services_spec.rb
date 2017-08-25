@@ -67,8 +67,10 @@ describe GitHubService do
       end
     end
     it 'finds open repo pulls given repo name' do
-      VCR.use_cassette("services/their_activity") do
-        
+      VCR.use_cassette("services/open_pulls") do
+        api = GitHubService.new(@user)
+        pull_requests = api.open_pull_requests
+        expect(pull_requests.count).to eq(1)
       end
     end
   end
