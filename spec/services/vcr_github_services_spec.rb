@@ -56,7 +56,7 @@ describe GitHubService do
         api = GitHubService.new(@user)
         followings = api.following
         first_following = followings.first
-        expect(first_following[:login]).to eq("katiekeel")
+        expect(first_following.username).to eq("katiekeel")
       end
     end
     it 'finds users recent commits' do

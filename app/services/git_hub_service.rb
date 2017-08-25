@@ -29,7 +29,8 @@ class GitHubService
   end
 
   def following
-    parse connection.get("/user/following?access_token=#{current_user.token}")
+    followings = parse connection.get("/user/following?access_token=#{current_user.token}")
+    create_followings(followings)
   end
 
   def my_recents
@@ -42,7 +43,7 @@ class GitHubService
 
   def organizations
     orgs = parse connection.get("/user/orgs?access_token=#{current_user.token}")
-    byebug
+    create_organizations(orgs)
   end
 
   def new_repo(name)
@@ -86,6 +87,18 @@ class GitHubService
   def create_followers(followers)
     followers.map do |follower|
       Follower.new(follower)
+    end
+  end
+
+  def create_organizations(orgs)
+    orgs.map do |org|
+      Organization.new(org)
+    end
+  end
+
+  def create_followings(followings)
+    followings.map do |user|
+      Following.new(user)
     end
   end
 

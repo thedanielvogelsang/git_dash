@@ -21,24 +21,27 @@
       <% end %></ul>
     </section>
     <section class="container-dash-content">
-      <h3> MY FOLLOWERS </h3>
-      <ul><% @api.followers.each do |follower| %>
-        <p><%= image_tag(follower.image, :class => "avatar-thumbnail") %> : <%= follower.username %></p>
-        <li>repos: <%= link_to "click_here", follower.repos %></li>
-      <% end %></ul>
+      <h3> My Followers </h3>
+      <<% @api.followers.each do |follower| %>
+        <p><a href="<%= follower.url %>"><%= image_tag(follower.image, :class => "avatar-thumbnail") %></a> : <%= follower.username %></p>
+        <ul><li>repos: <%= link_to "click_here", follower.repos %></li></ul>
+      <% end %>
       <%= link_to "followers", "https://api.github.com/user/followers?access_token=#{current_user.token}" %>
     </section>
     <section class="container-dash-content">
       <h3> Who I'm Following </h3>
       <% @api.following.each do |follower| %>
-        <p><%= image_tag(follower[:avatar_url], :class => "avatar-thumbnail") %> : <%= follower[:login].upcase %></p>
+        <p><a href="<%= follower.url %>"><%= image_tag(follower.image, :class => "avatar-thumbnail", ) %></a> : <%= follower.username.upcase %></p>
       <% end %>
       <%= link_to "followings", "https://api.github.com/user/following?access_token=#{current_user.token}" %>
     </section>
     <section class="container-dash-content">
       <h3> My organizations: <%= @api.organizations.count %> </h3>
       <ul><% @api.organizations.each do |organization| %>
-        <li><%= organization %></li>
+        <p><%= organization.name %> : </p>
+        <li><%= link_to organization.id, organization.url %></li>
+        <li><%= link_to "repos", organization.repos %></li>
+        <li><%= link_to "public members", organization.public_members %></li>
       <% end %></ul>
       <%= link_to "organizations", "https://api.github.com/user/orgs?access_token=#{current_user.token}" %>
     </section>
