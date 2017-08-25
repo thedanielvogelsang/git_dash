@@ -1,3 +1,4 @@
 <ul><% @pulls.each do |pull| %>
-<li><%= link_to pull[:title], pull[:html_url] %></li>
+<li><%= link_to pull.title, pull.url %> -- <%= pull.body %> -- <%= pull.created_at %></li>
+<p>sha: <%= pull.merge_sha %></p>
 <% end %></ul>

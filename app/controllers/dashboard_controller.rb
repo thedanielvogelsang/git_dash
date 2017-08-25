@@ -18,7 +18,7 @@ class DashboardController < ApplicationController
   def pulls
     api = GitHubService.new(current_user)
     pulls = api.open_pull_requests
-    @pulls = pulls.map |pull| do
+    @pulls = pulls.map do |pull|
       Pull.new(pull)
     end
   end
