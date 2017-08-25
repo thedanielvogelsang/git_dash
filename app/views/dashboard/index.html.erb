@@ -2,7 +2,7 @@
   <div class="profile-header">
     <h1>Welcome back <i><%= current_user.username.upcase %></i>!</h1>
       <h3><%= current_user[''] %></h3>
-        <%= image_tag(current_user.image, :class => "profile-pic") %>
+        <%= image_tag(current_user.image, :class => "profile-pic") %></br>
         <%= link_to "Open Pull Requests", "/open_pull_requests" %>
     <hr>
     <section>

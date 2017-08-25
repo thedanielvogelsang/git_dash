@@ -14,4 +14,12 @@ class DashboardController < ApplicationController
       render 'dashboard/network_events'
     end
   end
+
+  def pulls
+    api = GitHubService.new(current_user)
+    pulls = api.open_pull_requests
+    @pulls = pulls.map |pull| do
+      Pull.new(pull)
+    end
+  end
 end
