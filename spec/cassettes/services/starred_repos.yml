@@ -1,0 +1,75 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.github.com/user/starred?access_token=75e2f9ad47f87fbde8d0aa667768147107148066
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.13.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Fri, 25 Aug 2017 01:14:21 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4994'
+      X-Ratelimit-Reset:
+      - '1503625867'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      Etag:
+      - W/"93260e595705983f84577a175d853560"
+      X-Oauth-Scopes:
+      - repo
+      X-Accepted-Oauth-Scopes:
+      - ''
+      X-Oauth-Client-Id:
+      - 36c5a1a0c5c547c4b9bc
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Runtime-Rack:
+      - '0.046059'
+      X-Github-Request-Id:
+      - E2F9:22E16:153193E:2B9515D:599F79ED
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"id":100309081,"name":"rales_engine","full_name":"thedanielvogelsang/rales_engine","owner":{"login":"thedanielvogelsang","id":24497322,"avatar_url":"https://avatars3.githubusercontent.com/u/24497322?v=4","gravatar_id":"","url":"https://api.github.com/users/thedanielvogelsang","html_url":"https://github.com/thedanielvogelsang","followers_url":"https://api.github.com/users/thedanielvogelsang/followers","following_url":"https://api.github.com/users/thedanielvogelsang/following{/other_user}","gists_url":"https://api.github.com/users/thedanielvogelsang/gists{/gist_id}","starred_url":"https://api.github.com/users/thedanielvogelsang/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/thedanielvogelsang/subscriptions","organizations_url":"https://api.github.com/users/thedanielvogelsang/orgs","repos_url":"https://api.github.com/users/thedanielvogelsang/repos","events_url":"https://api.github.com/users/thedanielvogelsang/events{/privacy}","received_events_url":"https://api.github.com/users/thedanielvogelsang/received_events","type":"User","site_admin":false},"private":false,"html_url":"https://github.com/thedanielvogelsang/rales_engine","description":null,"fork":false,"url":"https://api.github.com/repos/thedanielvogelsang/rales_engine","forks_url":"https://api.github.com/repos/thedanielvogelsang/rales_engine/forks","keys_url":"https://api.github.com/repos/thedanielvogelsang/rales_engine/keys{/key_id}","collaborators_url":"https://api.github.com/repos/thedanielvogelsang/rales_engine/collaborators{/collaborator}","teams_url":"https://api.github.com/repos/thedanielvogelsang/rales_engine/teams","hooks_url":"https://api.github.com/repos/thedanielvogelsang/rales_engine/hooks","issue_events_url":"https://api.github.com/repos/thedanielvogelsang/rales_engine/issues/events{/number}","events_url":"https://api.github.com/repos/thedanielvogelsang/rales_engine/events","assignees_url":"https://api.github.com/repos/thedanielvogelsang/rales_engine/assignees{/user}","branches_url":"https://api.github.com/repos/thedanielvogelsang/rales_engine/branches{/branch}","tags_url":"https://api.github.com/repos/thedanielvogelsang/rales_engine/tags","blobs_url":"https://api.github.com/repos/thedanielvogelsang/rales_engine/git/blobs{/sha}","git_tags_url":"https://api.github.com/repos/thedanielvogelsang/rales_engine/git/tags{/sha}","git_refs_url":"https://api.github.com/repos/thedanielvogelsang/rales_engine/git/refs{/sha}","trees_url":"https://api.github.com/repos/thedanielvogelsang/rales_engine/git/trees{/sha}","statuses_url":"https://api.github.com/repos/thedanielvogelsang/rales_engine/statuses/{sha}","languages_url":"https://api.github.com/repos/thedanielvogelsang/rales_engine/languages","stargazers_url":"https://api.github.com/repos/thedanielvogelsang/rales_engine/stargazers","contributors_url":"https://api.github.com/repos/thedanielvogelsang/rales_engine/contributors","subscribers_url":"https://api.github.com/repos/thedanielvogelsang/rales_engine/subscribers","subscription_url":"https://api.github.com/repos/thedanielvogelsang/rales_engine/subscription","commits_url":"https://api.github.com/repos/thedanielvogelsang/rales_engine/commits{/sha}","git_commits_url":"https://api.github.com/repos/thedanielvogelsang/rales_engine/git/commits{/sha}","comments_url":"https://api.github.com/repos/thedanielvogelsang/rales_engine/comments{/number}","issue_comment_url":"https://api.github.com/repos/thedanielvogelsang/rales_engine/issues/comments{/number}","contents_url":"https://api.github.com/repos/thedanielvogelsang/rales_engine/contents/{+path}","compare_url":"https://api.github.com/repos/thedanielvogelsang/rales_engine/compare/{base}...{head}","merges_url":"https://api.github.com/repos/thedanielvogelsang/rales_engine/merges","archive_url":"https://api.github.com/repos/thedanielvogelsang/rales_engine/{archive_format}{/ref}","downloads_url":"https://api.github.com/repos/thedanielvogelsang/rales_engine/downloads","issues_url":"https://api.github.com/repos/thedanielvogelsang/rales_engine/issues{/number}","pulls_url":"https://api.github.com/repos/thedanielvogelsang/rales_engine/pulls{/number}","milestones_url":"https://api.github.com/repos/thedanielvogelsang/rales_engine/milestones{/number}","notifications_url":"https://api.github.com/repos/thedanielvogelsang/rales_engine/notifications{?since,all,participating}","labels_url":"https://api.github.com/repos/thedanielvogelsang/rales_engine/labels{/name}","releases_url":"https://api.github.com/repos/thedanielvogelsang/rales_engine/releases{/id}","deployments_url":"https://api.github.com/repos/thedanielvogelsang/rales_engine/deployments","created_at":"2017-08-14T21:00:06Z","updated_at":"2017-08-22T19:43:52Z","pushed_at":"2017-08-24T15:36:21Z","git_url":"git://github.com/thedanielvogelsang/rales_engine.git","ssh_url":"git@github.com:thedanielvogelsang/rales_engine.git","clone_url":"https://github.com/thedanielvogelsang/rales_engine.git","svn_url":"https://github.com/thedanielvogelsang/rales_engine","homepage":null,"size":221,"stargazers_count":1,"watchers_count":1,"language":"Ruby","has_issues":true,"has_projects":true,"has_downloads":true,"has_wiki":true,"has_pages":false,"forks_count":0,"mirror_url":null,"open_issues_count":2,"forks":0,"open_issues":2,"watchers":1,"default_branch":"master","permissions":{"admin":true,"push":true,"pull":true}}]'
+    http_version: 
+  recorded_at: Fri, 25 Aug 2017 01:14:21 GMT
+recorded_with: VCR 3.0.3
