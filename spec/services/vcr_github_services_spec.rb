@@ -41,7 +41,7 @@ describe GitHubService do
         api = GitHubService.new(@user)
         followers = api.followers
         follower = followers.first
-        expect(follower[:login]).to eq('swdonovan')
+        expect(follower.username).to eq('swdonovan')
       end
     end
     it 'finds all users authorized user is following' do

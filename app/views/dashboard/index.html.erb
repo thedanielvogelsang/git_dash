@@ -12,6 +12,7 @@
       <% end %></ul>
     </section>
   </div>
+<div class="container">
   <div class="container-dash">
     <section class="container-dash-content">
       <h3> MY STARRED REPOS -- <%= @api.starred_repos.count %></h3>
@@ -22,15 +23,16 @@
     <section class="container-dash-content">
       <h3> MY FOLLOWERS </h3>
       <ul><% @api.followers.each do |follower| %>
-        <li><%= image_tag(follower[:avatar_url], :class => "avatar-thumbnail") %> : <%= follower[:login].upcase %></li>
+        <p><%= image_tag(follower.image, :class => "avatar-thumbnail") %> : <%= follower.username %></p>
+        <li>repos: <%= link_to "click_here", follower.repos %></li>
       <% end %></ul>
       <%= link_to "followers", "https://api.github.com/user/followers?access_token=#{current_user.token}" %>
     </section>
     <section class="container-dash-content">
       <h3> Who I'm Following </h3>
-      <ul><% @api.following.each do |follower| %>
-        <li><%= image_tag(follower[:avatar_url], :class => "avatar-thumbnail") %> : <%= follower[:login].upcase %></li>
-      <% end %></ul>
+      <% @api.following.each do |follower| %>
+        <p><%= image_tag(follower[:avatar_url], :class => "avatar-thumbnail") %> : <%= follower[:login].upcase %></p>
+      <% end %>
       <%= link_to "followings", "https://api.github.com/user/following?access_token=#{current_user.token}" %>
     </section>
     <section class="container-dash-content">
@@ -41,9 +43,10 @@
       <%= link_to "organizations", "https://api.github.com/user/orgs?access_token=#{current_user.token}" %>
     </section>
   </div>
-
+</div>
+</br>
 <hr>
-<div class='container'>
+<div class="footer">
   <%= link_to "my_feed", dashboard_path(id: 'my_feed') %>
   <%= link_to "their_feed", dashboard_path(id: 'network_feed') %>
 </div>
