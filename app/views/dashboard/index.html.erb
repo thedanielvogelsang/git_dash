@@ -7,7 +7,7 @@
     <hr>
     <section>
       <h3> MY GITHUB REPOS </h3>
-      <ul><% @api.repos.each do |repo| %>
+      <ul style="list-style: none;"><% @api.repos.each do |repo| %>
         <li><%= link_to repo.name, repo.url %> -- <i><%= repo.owner %></i> -- last updated at: <%= repo.created_at%></li>
       <% end %></ul>
     </section>
@@ -15,41 +15,43 @@
 <div class="container">
   <div class="container-dash">
     <section class="container-dash-content">
-      <h3> MY STARRED REPOS -- <%= @api.starred_repos.count %></h3>
-      <ul><% @api.starred_repos.each do |repo| %>
-        <li><%= link_to repo.name, repo.url %></li>
-      <% end %></ul>
+      <h3> My Starred Repos: <%= @api.starred_repos.count %></h3>
+      <% @api.starred_repos.each do |repo| %>
+        <p><%= link_to repo.name, repo.url %></p>
+      <% end %>
     </section>
     <section class="container-dash-content">
       <h3> My Followers </h3>
-      <<% @api.followers.each do |follower| %>
+      <% @api.followers.each do |follower| %>
         <p><a href="<%= follower.url %>"><%= image_tag(follower.image, :class => "avatar-thumbnail") %></a> : <%= follower.username %></p>
-        <ul><li>repos: <%= link_to "click_here", follower.repos %></li></ul>
+        <p>repos: <%= link_to "click_here", follower.repos %></p>
       <% end %>
-      <%= link_to "followers", "https://api.github.com/user/followers?access_token=#{current_user.token}" %>
+      <div class="json_link">
+        <%= link_to("followers", "https://api.github.com/user/followers?access_token=#{current_user.token}")%>
+      </div>
     </section>
     <section class="container-dash-content">
       <h3> Who I'm Following </h3>
       <% @api.following.each do |follower| %>
-        <p><a href="<%= follower.url %>"><%= image_tag(follower.image, :class => "avatar-thumbnail", ) %></a> : <%= follower.username.upcase %></p>
+        <p><a href="<%= follower.url %>"><%= image_tag(follower.image, :class => "avatar-thumbnail") %></a> : <%= follower.username.upcase %></p>
       <% end %>
-      <%= link_to "followings", "https://api.github.com/user/following?access_token=#{current_user.token}" %>
+      <div class="json_link">
+        <%= link_to("followings", "https://api.github.com/user/following?access_token=#{current_user.token}")%>
+      </div>
     </section>
     <section class="container-dash-content">
       <h3> My organizations: <%= @api.organizations.count %> </h3>
-      <ul><% @api.organizations.each do |organization| %>
-        <p><%= organization.name %> : </p>
-        <li><%= link_to organization.id, organization.url %></li>
-        <li><%= link_to "repos", organization.repos %></li>
-        <li><%= link_to "public members", organization.public_members %></li>
-      <% end %></ul>
-      <%= link_to "organizations", "https://api.github.com/user/orgs?access_token=#{current_user.token}" %>
+      <% @api.organizations.each do |organization| %>
+        <div class="organization-box">
+          <p class="organization_name"><%= organization.name %></p>
+          <p><%= link_to organization.id, organization.url %></p>
+          <p><%= link_to "repos", organization.repos %></p>
+          <p><%= link_to "public members", organization.public_members %></p>
+        </div>
+      <% end %>
+    <div class="json_link">
+      <%= link_to("organizations", "https://api.github.com/user/orgs?access_token=#{current_user.token}")%>
+    </div>
     </section>
   </div>
-</div>
-</br>
-<hr>
-<div class="footer">
-  <%= link_to "my_feed", dashboard_path(id: 'my_feed') %>
-  <%= link_to "their_feed", dashboard_path(id: 'network_feed') %>
 </div>

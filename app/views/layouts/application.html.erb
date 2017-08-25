@@ -3,12 +3,21 @@
   <head>
     <title>GithubDash</title>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag "styles" %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <%= render "shared/navbar" %>
+    <div class="container">
+    <% flash.each do |name, msg| %>
+      <% if name == 'error' %>
+        <%= content_tag :div, msg.html_safe, :class => "alert alert-danger", :role => "alert" %>
+      <% else %>
+        <%= content_tag :div, msg.html_safe, :class => "alert alert-success", :role=> "alert" %>
+      <% end %>
+    <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>

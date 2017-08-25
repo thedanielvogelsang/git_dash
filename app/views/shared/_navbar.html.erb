@@ -1,0 +1,37 @@
+<nav class="navbar navbar-invers navbar-default">
+
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/dashboard">GitHub Dash</a>
+    </div>
+
+    <div id="navbar" class="navbar-collapse collapse">
+
+
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+      <% if current_page?("/") %>
+        <li><%= link_to "Login", "https://github.com/login/oauth/authorize?client_id=#{ENV['github_client_id']}&scope=repo" %></li>
+      <% end %>
+      <% if current_user %>
+        <li>
+          <%= link_to 'Logout', logout_path, method: :delete %>
+        </li>
+      <% end %>
+        <li>
+          <%= link_to "My Feed", dashboard_path(id: 'my_feed') %>
+        </li>
+        <li>
+          <%= link_to "Their Feed", dashboard_path(id: 'network_feed') %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+</nav>

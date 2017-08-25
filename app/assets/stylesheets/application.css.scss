@@ -1,0 +1,183 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");/*!
+ * bootswatch v3.3.7
+ * Homepage: http://bootswatch.com
+ * Copyright 2012-2017 Thomas Park
+ * Licensed under MIT
+ * Based on Bootstrap
+*/
+ .avatar-thumbnail {
+   height: 20px;
+   width: 20px;
+   border: 1px solid black;
+ }
+
+ .profile-pic{
+   align-self: center;
+   height: 130px;
+   width: 130px;
+   border: 2px solid black;
+ }
+
+ .profile-header {
+   text-align: center;
+ }
+
+ .container-dash{
+   height: 520px;
+   width: 98%;
+ }
+
+ .container-dash-content{
+   background-color: rgb(188, 238, 254);
+   float: left;
+   margin: 10px;
+   border: 2px solid black;
+   padding: 3px;
+   height: 500px;
+   width: 22%;
+   word-wrap: break-word;
+   text-align: center;
+ }
+
+ .container-dash-content, p{
+   padding-left: 5px;
+ }
+
+
+ nav.navbar-invers_a{
+   color: rgb(135, 169, 219);
+ }
+
+ nav.navbar-invers{
+   background-color: rgb(50, 41, 32);
+   color: rgb(135, 169, 219);
+ }
+
+ h3{
+   text-decoration: underline;
+ }
+
+ p.organization_name{
+   font-size: 1.4em;
+   text-decoration: underline;
+ }
+
+ .user-listing{
+   border: 2px dashed black; 
+ }
+
+ .organization-box{
+   width: 140px;
+   margin-left: 46px;
+   border: 2px dashed black;
+ }
+
+ .json_link{
+   text-decoration: overline;
+   font-size: 2em;
+   text-decoration-style: dotted;
+   margin-top: 80px;
+ }
+   //  ;
+/*--.description {
+    height: 100px;
+    width: 80%;
+    text-align: center;
+}
+
+// .caption {
+//   height: 200px;
+//   width: 200px;
+// }
+
+
+.hero-feature{
+  display: block;
+  box-sizing: border-box;
+  box-sizing: content-box;
+  height: 550px;
+}
+
+// form.button-to{
+//   float: left;
+//   margin-left: 0px;
+//   margin-right: 5px;
+//   padding: 0;
+// }
+
+// a.btn{
+//   float: left;
+//   margin-right: 0px;
+//   margin-left: 20px;
+// }
+.cart-page {
+  text-align: center;
+  align-items: center;
+}
+
+.category-show-page {
+  text-align: center;
+  align-items: center;
+  background-image: image-url("tetrahedronfield.jpg");
+  // background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+.cart-page {
+  background-color: grey;
+  // background-image: image-url("tetrahedronfield.jpg");
+  // background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+
+header.jumbotron{
+  background: rgb(135, 169, 219);
+  color: white;
+}
+
+
+.thumbnail{
+  background: rgb(232, 237, 243);
+  padding: 20px 8px 10px 8px;
+  margin-top: 30px;
+  display: block;
+}
+
+img.course-image{
+
+}
+
+// .courses-header {
+//   font-weight: normal;
+//   font-size: 2.6em;
+//   text-decoration: underline;
+//   line-height: 2em;
+//   color: rgb(125, 190, 209);
+//   background: rgb(125, 190, 209);
+// }
+.submit {
+  background-color: rgb(63, 176, 172);
+}
+.container-main{
+  border: 2px solid black;
+}
+
+.search-bar {
+  padding-top:  13px;
+}-*/
