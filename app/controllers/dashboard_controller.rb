@@ -1,7 +1,7 @@
 class DashboardController < ApplicationController
 
   def index
-    byebug
+    @api = GitHubService.new(current_user)
   end
 
 end
