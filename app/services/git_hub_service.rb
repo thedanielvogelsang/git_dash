@@ -56,16 +56,22 @@ class GitHubService
     my_repos.each do |repo|
       pull_requests << repo_pulls(repo[:name])
     end
-    check_pulls(pull_requests)
+    clean_open_pull_hash(pull_requests)
   end
 
-  def check_pulls(pull_requests)
-    pulls = pull_requests.flatten
-    if pulls.include?({:message=>"Not Found", :documentation_url=>"https://developer.github.com/v3"})
-      pulls.delete({:message=>"Not Found", :documentation_url=>"https://developer.github.com/v3"})
+  def clean_open_pull_hash(pull_requests)
+    pull_array = pull_requests.flatten
+    if pull_array.include?({:message=>"Not Found", :documentation_url=>"https://developer.github.com/v3"})
+      pull_array.delete({:message=>"Not Found", :documentation_url=>"https://developer.github.com/v3"})
     else
     end
-    pulls
+    create_pulls(pull_array)
+  end
+
+  def create_pulls(pull_array)
+    open_pulls = pull_array.map do |pull|
+      Pull.new(pull)
+    end
   end
 
   private
