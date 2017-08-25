@@ -8,7 +8,7 @@
     <section>
       <h3> MY GITHUB REPOS </h3>
       <ul><% @api.repos.each do |repo| %>
-        <li><%= link_to repo[:name], repo[:html_url] %> -- <i><%= repo[:owner][:login] %></i> -- last updated at: <%= DateTime.parse(repo[:updated_at]).strftime('%F') %></li>
+        <li><%= link_to repo.name, repo.url %> -- <i><%= repo.owner %></i> -- last updated at: <%= repo.created_at%></li>
       <% end %></ul>
     </section>
   </div>

@@ -18,5 +18,6 @@ class DashboardController < ApplicationController
   def open_pulls
     api = GitHubService.new(current_user)
     @open_pulls = api.open_pull_requests
+    byebug
   end
 end

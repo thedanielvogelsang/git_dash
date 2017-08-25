@@ -15,7 +15,8 @@ class GitHubService
   end
 
   def repos
-    parse connection.get("/user/repos?access_token=#{current_user.token}")
+    repos_hash = parse connection.get("/user/repos?access_token=#{current_user.token}")
+    create_repos(repos_hash)
   end
 
   def starred_repos
@@ -42,21 +43,21 @@ class GitHubService
     parse connection.get("/user/orgs?access_token=#{current_user.token}")
   end
 
-  def repo_pulls(repo)
-    parse connection.get("/repos/#{current_user.username}/#{repo}/pulls?access_token=#{current_user.token}")
-  end
-
   def new_repo(name)
     parse connection.post("/user/repos?scope=repo&access_token=#{current_user.token}&name=#{name}")
   end
 
   def open_pull_requests
     pull_requests = []
-    my_repos = repos
+    my_repos = parse connection.get("/user/repos?access_token=#{current_user.token}")
     my_repos.each do |repo|
       pull_requests << repo_pulls(repo[:name])
     end
     clean_open_pull_hash(pull_requests)
+  end
+
+  def repo_pulls(repo)
+    parse connection.get("/repos/#{current_user.username}/#{repo}/pulls?access_token=#{current_user.token}")
   end
 
   def clean_open_pull_hash(pull_requests)
@@ -71,6 +72,12 @@ class GitHubService
   def create_pulls(pull_array)
     open_pulls = pull_array.map do |pull|
       Pull.new(pull)
+    end
+  end
+
+  def create_repos(repos_hash)
+    repos_hash.map do |repo|
+      Repo.new(repo)
     end
   end
 

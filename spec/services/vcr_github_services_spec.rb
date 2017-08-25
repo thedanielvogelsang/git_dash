@@ -18,8 +18,8 @@ describe GitHubService do
         repos = api.repos
         repo = repos.first
         expect(repos.count).to eq(30)
-        expect(repo[:name]).to eq("bike-share")
-        expect(repo[:owner][:login]).to eq("DesTodo")
+        expect(repo.name).to eq("bike-share")
+        expect(repo.owner).to eq("DesTodo")
       end
     end
     it 'finds all starred repos' do
