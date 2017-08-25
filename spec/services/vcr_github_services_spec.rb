@@ -3,7 +3,7 @@ require 'rails_helper'
 describe GitHubService do
   describe "users" do
     before(:each) do
-      @user = User.create(uid:1, username: "thedanielvogelsang", token: "75e2f9ad47f87fbde8d0aa667768147107148066")
+      @user = User.create(uid:1, username: "thedanielvogelsang", token: "d7520b124b709e4ab3f255bcf89e5fc4e82550fe")
     end
     it "finds all users" do
       VCR.use_cassette("services/find_users") do
@@ -33,7 +33,7 @@ describe GitHubService do
       VCR.use_cassette("services/followers") do
         api = GitHubService.new(@user)
         followers = api.followers
-        expect(followers.count).to eq(3)
+        expect(followers.count).to eq(4)
       end
     end
     it 'finds correct follower' do
@@ -70,7 +70,7 @@ describe GitHubService do
       VCR.use_cassette("services/open_pulls") do
         api = GitHubService.new(@user)
         pull_requests = api.open_pull_requests
-        expect(pull_requests.count).to eq(1)
+        expect(pull_requests.count).to eq(0)
       end
     end
   end

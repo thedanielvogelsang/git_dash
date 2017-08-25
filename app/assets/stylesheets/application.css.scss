@@ -60,7 +60,6 @@
    padding-left: 5px;
  }
 
-
  nav.navbar-invers_a{
    color: rgb(135, 169, 219);
  }
@@ -80,7 +79,7 @@
  }
 
  .user-listing{
-   border: 2px dashed black; 
+   border: 2px dashed black;
  }
 
  .organization-box{
@@ -94,6 +93,21 @@
    font-size: 2em;
    text-decoration-style: dotted;
    margin-top: 80px;
+ }
+
+ table.tbl-feed, th, td{
+   max-width: 200px;
+   min-width: 180px;
+   margin: 10px;
+   padding: 2px;
+   border: 1px solid black;
+ }
+
+ #repo_url{
+   width: 280px; 
+ }
+ tr.column-titles, th{
+   text-align: center
  }
    //  ;
 /*--.description {

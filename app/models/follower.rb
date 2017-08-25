@@ -9,4 +9,9 @@ class Follower
     @url = hash[:html_url]
   end
 
+  def self.create_followers(followers)
+    followers.map do |follower|
+      Follower.new(follower)
+    end
+  end
 end

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.github.com/user/followers?access_token=75e2f9ad47f87fbde8d0aa667768147107148066
+    uri: https://api.github.com/user/followers?access_token=d7520b124b709e4ab3f255bcf89e5fc4e82550fe
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - GitHub.com
       Date:
-      - Fri, 25 Aug 2017 01:14:21 GMT
+      - Fri, 25 Aug 2017 23:35:32 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -31,15 +31,15 @@ http_interactions:
       X-Ratelimit-Limit:
       - '5000'
       X-Ratelimit-Remaining:
-      - '4993'
+      - '4892'
       X-Ratelimit-Reset:
-      - '1503625867'
+      - '1503706498'
       Cache-Control:
       - private, max-age=60, s-maxage=60
       Vary:
       - Accept, Authorization, Cookie, X-GitHub-OTP
       Etag:
-      - W/"7aa17e5fa04b1dfa21d229591bd39725"
+      - W/"93f7a063c74dbaf5736b31d7a7180b24"
       X-Oauth-Scopes:
       - repo
       X-Accepted-Oauth-Scopes:
@@ -64,12 +64,12 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       X-Runtime-Rack:
-      - '0.035589'
+      - '0.026548'
       X-Github-Request-Id:
-      - E2FA:22E16:1531961:2B951A2:599F79ED
+      - F50E:22E16:1ED4A77:3F1515B:59A0B444
     body:
       encoding: ASCII-8BIT
-      string: '[{"login":"swdonovan","id":25035051,"avatar_url":"https://avatars3.githubusercontent.com/u/25035051?v=4","gravatar_id":"","url":"https://api.github.com/users/swdonovan","html_url":"https://github.com/swdonovan","followers_url":"https://api.github.com/users/swdonovan/followers","following_url":"https://api.github.com/users/swdonovan/following{/other_user}","gists_url":"https://api.github.com/users/swdonovan/gists{/gist_id}","starred_url":"https://api.github.com/users/swdonovan/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/swdonovan/subscriptions","organizations_url":"https://api.github.com/users/swdonovan/orgs","repos_url":"https://api.github.com/users/swdonovan/repos","events_url":"https://api.github.com/users/swdonovan/events{/privacy}","received_events_url":"https://api.github.com/users/swdonovan/received_events","type":"User","site_admin":false},{"login":"jtruong2","id":25845955,"avatar_url":"https://avatars1.githubusercontent.com/u/25845955?v=4","gravatar_id":"","url":"https://api.github.com/users/jtruong2","html_url":"https://github.com/jtruong2","followers_url":"https://api.github.com/users/jtruong2/followers","following_url":"https://api.github.com/users/jtruong2/following{/other_user}","gists_url":"https://api.github.com/users/jtruong2/gists{/gist_id}","starred_url":"https://api.github.com/users/jtruong2/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/jtruong2/subscriptions","organizations_url":"https://api.github.com/users/jtruong2/orgs","repos_url":"https://api.github.com/users/jtruong2/repos","events_url":"https://api.github.com/users/jtruong2/events{/privacy}","received_events_url":"https://api.github.com/users/jtruong2/received_events","type":"User","site_admin":false},{"login":"katiekeel","id":11282627,"avatar_url":"https://avatars2.githubusercontent.com/u/11282627?v=4","gravatar_id":"","url":"https://api.github.com/users/katiekeel","html_url":"https://github.com/katiekeel","followers_url":"https://api.github.com/users/katiekeel/followers","following_url":"https://api.github.com/users/katiekeel/following{/other_user}","gists_url":"https://api.github.com/users/katiekeel/gists{/gist_id}","starred_url":"https://api.github.com/users/katiekeel/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/katiekeel/subscriptions","organizations_url":"https://api.github.com/users/katiekeel/orgs","repos_url":"https://api.github.com/users/katiekeel/repos","events_url":"https://api.github.com/users/katiekeel/events{/privacy}","received_events_url":"https://api.github.com/users/katiekeel/received_events","type":"User","site_admin":false}]'
+      string: '[{"login":"swdonovan","id":25035051,"avatar_url":"https://avatars3.githubusercontent.com/u/25035051?v=4","gravatar_id":"","url":"https://api.github.com/users/swdonovan","html_url":"https://github.com/swdonovan","followers_url":"https://api.github.com/users/swdonovan/followers","following_url":"https://api.github.com/users/swdonovan/following{/other_user}","gists_url":"https://api.github.com/users/swdonovan/gists{/gist_id}","starred_url":"https://api.github.com/users/swdonovan/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/swdonovan/subscriptions","organizations_url":"https://api.github.com/users/swdonovan/orgs","repos_url":"https://api.github.com/users/swdonovan/repos","events_url":"https://api.github.com/users/swdonovan/events{/privacy}","received_events_url":"https://api.github.com/users/swdonovan/received_events","type":"User","site_admin":false},{"login":"jtruong2","id":25845955,"avatar_url":"https://avatars1.githubusercontent.com/u/25845955?v=4","gravatar_id":"","url":"https://api.github.com/users/jtruong2","html_url":"https://github.com/jtruong2","followers_url":"https://api.github.com/users/jtruong2/followers","following_url":"https://api.github.com/users/jtruong2/following{/other_user}","gists_url":"https://api.github.com/users/jtruong2/gists{/gist_id}","starred_url":"https://api.github.com/users/jtruong2/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/jtruong2/subscriptions","organizations_url":"https://api.github.com/users/jtruong2/orgs","repos_url":"https://api.github.com/users/jtruong2/repos","events_url":"https://api.github.com/users/jtruong2/events{/privacy}","received_events_url":"https://api.github.com/users/jtruong2/received_events","type":"User","site_admin":false},{"login":"katiekeel","id":11282627,"avatar_url":"https://avatars2.githubusercontent.com/u/11282627?v=4","gravatar_id":"","url":"https://api.github.com/users/katiekeel","html_url":"https://github.com/katiekeel","followers_url":"https://api.github.com/users/katiekeel/followers","following_url":"https://api.github.com/users/katiekeel/following{/other_user}","gists_url":"https://api.github.com/users/katiekeel/gists{/gist_id}","starred_url":"https://api.github.com/users/katiekeel/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/katiekeel/subscriptions","organizations_url":"https://api.github.com/users/katiekeel/orgs","repos_url":"https://api.github.com/users/katiekeel/repos","events_url":"https://api.github.com/users/katiekeel/events{/privacy}","received_events_url":"https://api.github.com/users/katiekeel/received_events","type":"User","site_admin":false},{"login":"bretfunk","id":2019012,"avatar_url":"https://avatars3.githubusercontent.com/u/2019012?v=4","gravatar_id":"","url":"https://api.github.com/users/bretfunk","html_url":"https://github.com/bretfunk","followers_url":"https://api.github.com/users/bretfunk/followers","following_url":"https://api.github.com/users/bretfunk/following{/other_user}","gists_url":"https://api.github.com/users/bretfunk/gists{/gist_id}","starred_url":"https://api.github.com/users/bretfunk/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/bretfunk/subscriptions","organizations_url":"https://api.github.com/users/bretfunk/orgs","repos_url":"https://api.github.com/users/bretfunk/repos","events_url":"https://api.github.com/users/bretfunk/events{/privacy}","received_events_url":"https://api.github.com/users/bretfunk/received_events","type":"User","site_admin":false}]'
     http_version: 
-  recorded_at: Fri, 25 Aug 2017 01:14:21 GMT
+  recorded_at: Fri, 25 Aug 2017 23:35:32 GMT
 recorded_with: VCR 3.0.3

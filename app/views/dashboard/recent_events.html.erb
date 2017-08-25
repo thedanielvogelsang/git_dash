@@ -1,10 +1,11 @@
 <h1>MY FEED!</h1>
 
-<table><% @recents.each do |commit| %>
-  <tr>
-    <th>type</th><th>repo_name</th><th>repo_url</th><th>commit_id</th>
+<table class='tbl-feed'>
+  <tr class='column-titles'>
+    <th>type</th><th>repo_name</th><th id='repo_url'>repo_url</th><th>commit_id</th><th>created_at</th>
   </tr>
+  <% @recents.each do |commit| %>
   <tr>
-    <td><%= commit[:type] %></td><td><%= link_to commit[:repo][:name], "http://github.com/#{commit[:repo][:name]}" %></td><td><%= link_to commit[:repo][:name], commit[:repo][:url] %></td><td><%= commit[:id] %></td>
+    <td><%= commit.type%></td><td><%= link_to commit.username, "http://github.com/#{commit.repo_name}" %></td><td><%= link_to commit.repo_name, commit.repo %></td><td><%= commit.id %></td><td><%= commit.created_at %></td>
   </tr>
 <% end %></table>

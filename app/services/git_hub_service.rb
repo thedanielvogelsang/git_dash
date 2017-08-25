@@ -16,37 +16,37 @@ class GitHubService
 
   def repos
     repos_hash = parse connection.get("/user/repos?access_token=#{current_user.token}")
-    create_repos(repos_hash)
+    Repo.create_repos(repos_hash)
   end
 
   def starred_repos
     repos = parse connection.get("/user/starred?access_token=#{current_user.token}")
-    repos.map do |repo|
-      Repo.new(repo)
-    end
+    Repo.create_repos(repos)
   end
 
   def followers
     followers = parse connection.get("/user/followers?access_token=#{current_user.token}")
-    create_followers(followers)
+    Follower.create_followers(followers)
   end
 
   def following
     followings = parse connection.get("/user/following?access_token=#{current_user.token}")
-    create_followings(followings)
+    Following.create_followings(followings)
   end
 
   def my_recents
-    parse connection.get("/users/#{current_user.username}/events?access_token=#{current_user.token}")
+    recents = parse connection.get("/users/#{current_user.username}/events?access_token=#{current_user.token}")
+    Commit.create_commits(recents)
   end
 
   def their_recents
-    parse connection.get("/users/#{current_user.username}/received_events?access_token=#{current_user.token}")
+    recents = parse connection.get("/users/#{current_user.username}/received_events?access_token=#{current_user.token}")
+    Commit.create_commits(recents)
   end
 
   def organizations
     orgs = parse connection.get("/user/orgs?access_token=#{current_user.token}")
-    create_organizations(orgs)
+    Organization.create_organizations(orgs)
   end
 
   def new_repo(name)
@@ -54,55 +54,16 @@ class GitHubService
   end
 
   def open_pull_requests
-    pull_requests = []
     my_repos = parse connection.get("/user/repos?access_token=#{current_user.token}")
-    my_repos.each do |repo|
-      pull_requests << repo_pulls(repo[:name])
-    end
-    clean_open_pull_hash(pull_requests)
+    Pull.find_open_pulls(my_repos, current_user)
+  end
+
+  def self.repo_pulls(current_user, repo)
+    new(current_user).repo_pulls(repo)
   end
 
   def repo_pulls(repo)
     parse connection.get("/repos/#{current_user.username}/#{repo}/pulls?access_token=#{current_user.token}")
-  end
-
-  def clean_open_pull_hash(pull_requests)
-    pull_array = pull_requests.flatten
-    if pull_array.include?({:message=>"Not Found", :documentation_url=>"https://developer.github.com/v3"})
-      pull_array.delete({:message=>"Not Found", :documentation_url=>"https://developer.github.com/v3"})
-    else
-    end
-    create_pulls(pull_array)
-  end
-
-  def create_pulls(pull_array)
-    open_pulls = pull_array.map do |pull|
-      Pull.new(pull)
-    end
-  end
-
-  def create_repos(repos_hash)
-    repos_hash.map do |repo|
-      Repo.new(repo)
-    end
-  end
-
-  def create_followers(followers)
-    followers.map do |follower|
-      Follower.new(follower)
-    end
-  end
-
-  def create_organizations(orgs)
-    orgs.map do |org|
-      Organization.new(org)
-    end
-  end
-
-  def create_followings(followings)
-    followings.map do |user|
-      Following.new(user)
-    end
   end
 
   private
