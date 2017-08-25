@@ -1,0 +1,49 @@
+
+  <div class="profile-header">
+    <h1>Welcome back <i><%= current_user.username.upcase %></i>!</h1>
+      <h3><%= current_user[''] %></h3>
+        <%= image_tag(current_user.image, :class => "profile-pic") %>
+        <%= link_to "Open Pull Requests", "/open_pull_requests" %>
+    <hr>
+    <section>
+      <h3> MY GITHUB REPOS </h3>
+      <ul><% @api.repos.each do |repo| %>
+        <li><%= link_to repo[:name], repo[:html_url] %> -- <i><%= repo[:owner][:login] %></i> -- last updated at: <%= DateTime.parse(repo[:updated_at]).strftime('%F') %></li>
+      <% end %></ul>
+    </section>
+  </div>
+  <div class="container-dash">
+    <section class="container-dash-content">
+      <h3> MY STARRED REPOS -- <%= @api.starred_repos.count %></h3>
+      <ul><% @api.starred_repos.each do |repo| %>
+        <li><%= link_to repo[:name], repo[:html_url] %></li>
+      <% end %></ul>
+    </section>
+    <section class="container-dash-content">
+      <h3> MY FOLLOWERS </h3>
+      <ul><% @api.followers.each do |follower| %>
+        <li><%= image_tag(follower[:avatar_url], :class => "avatar-thumbnail") %> : <%= follower[:login].upcase %></li>
+      <% end %></ul>
+      <%= link_to "followers", "https://api.github.com/user/followers?access_token=#{current_user.token}" %>
+    </section>
+    <section class="container-dash-content">
+      <h3> Who I'm Following </h3>
+      <ul><% @api.following.each do |follower| %>
+        <li><%= image_tag(follower[:avatar_url], :class => "avatar-thumbnail") %> : <%= follower[:login].upcase %></li>
+      <% end %></ul>
+      <%= link_to "followings", "https://api.github.com/user/following?access_token=#{current_user.token}" %>
+    </section>
+    <section class="container-dash-content">
+      <h3> My organizations: <%= @api.organizations.count %> </h3>
+      <ul><% @api.organizations.each do |organization| %>
+        <li><%= organization %></li>
+      <% end %></ul>
+      <%= link_to "organizations", "https://api.github.com/user/orgs?access_token=#{current_user.token}" %>
+    </section>
+  </div>
+
+<hr>
+<div class='container'>
+  <%= link_to "my_feed", dashboard_path(id: 'mine') %>
+  <%= link_to "their_feed", dashboard_path(id: 'theirs') %>
+</div>
